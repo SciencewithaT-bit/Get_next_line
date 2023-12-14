@@ -6,7 +6,7 @@
 /*   By: saaboudo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 19:33:07 by saaboudo          #+#    #+#             */
-/*   Updated: 2023/12/14 18:05:32 by saaboudo         ###   ########.fr       */
+/*   Updated: 2023/12/14 19:48:50 by saaboudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int main(void)
 			break ;
 		count++;
 		printf("[%d]:%s\n", count, next_line);
+		free (next_line);
 		next_line = NULL;
 	
 	}
