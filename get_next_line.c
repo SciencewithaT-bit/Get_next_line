@@ -6,12 +6,12 @@
 /*   By: saaboudo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 16:38:19 by saaboudo          #+#    #+#             */
-/*   Updated: 2023/12/13 20:07:49 by saaboudo         ###   ########.fr       */
+/*   Updated: 2023/12/14 14:31:10 by saaboudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include "get_next_line.h"
 
 char	*get_next_line(int fd)
 {
-	
+		
 }
