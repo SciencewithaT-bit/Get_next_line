@@ -6,7 +6,7 @@
 /*   By: saaboudo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:14:43 by saaboudo          #+#    #+#             */
-/*   Updated: 2023/12/16 15:52:46 by saaboudo         ###   ########.fr       */
+/*   Updated: 2023/12/17 15:22:29 by saaboudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -70,13 +70,33 @@ size_t ft_strlen(const char *s)
 	return (i);
 }
 
-char *extract_line(char *basin_buffer)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t i;
+	void	*tab;
 
-	i = 0; 
-	while (basin_buffer[i] != '\n')
+	if (size != 0 && size * nmemb / size != nmemb)
+		return (NULL);
+	tab = malloc(nmemb * size);
+	if (tab)
 	{
-		i++; 
+		ft_memset(tab, 0, nmemb * size);
+		return (tab);
 	}
+	return (NULL);
+}
+
+
+void	*ft_memset(void *str, int c, size_t n)
+{
+	size_t			i;
+	unsigned char	*tab;
+
+	tab = (unsigned char *) str;
+	i = 0;
+	while (i < n)
+	{
+		tab[i] = c;
+		i++;
+	}
+	return (tab);
 }

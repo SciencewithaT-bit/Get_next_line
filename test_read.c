@@ -6,7 +6,7 @@
 /*   By: saaboudo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 19:33:07 by saaboudo          #+#    #+#             */
-/*   Updated: 2023/12/16 18:01:17 by saaboudo         ###   ########.fr       */
+/*   Updated: 2023/12/17 20:37:49 by saaboudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ char *append_read(char *basin_buffer, char *read_buffer)
 }
 
 
+char	*extract_ine()
 
 int main(void)
 {
