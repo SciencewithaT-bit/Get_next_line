@@ -6,7 +6,7 @@
 /*   By: saaboudo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 15:03:59 by saaboudo          #+#    #+#             */
-/*   Updated: 2023/12/19 18:30:05 by saaboudo         ###   ########.fr       */
+/*   Updated: 2023/12/20 19:27:19 by saaboudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <fcntl.h>
@@ -20,7 +20,7 @@ static char *append_str(char *pool_buffer, char *read_buffer);
 static char *read_from_fd(char *pool_buffer, int fd)
 {
 	int byte_read; 
-	char *scoop_buffer; 
+	char *scoop_buffer;
 	
 	scoop_buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (scoop_buffer == NULL)
@@ -64,12 +64,11 @@ char *extract_line (char *buffer)
 		return (NULL);
 	}
 
-	new_line_pos = ft_strchr(buffer, '\n');
-	if (new_line_pos == NULL)
-		return (NULL);
-	line_length = new_line_pos - buffer;
-	line =(char*) malloc((line_length + 2) * sizeof(char));
 
+	// buffer have is value 0 or NULL, so the malloc is behaving weirdly need to find a way to only malloc when its valid
+	new_line_pos = ft_strchr(buffer, '\n');
+	line_length = new_line_pos - buffer + 1;
+	line =(char*) malloc((line_length + 1) * sizeof(char));
 	strncpy(line, buffer, line_length);
 	line[line_length] = '\0';
 
@@ -123,7 +122,7 @@ char	*get_next_line(int fd)
 }
 
 
-/*
+
 int main(void)
 {
 
@@ -134,21 +133,21 @@ int main(void)
 	 int count;
 
 	count = 0;
-	fd = open("example.txt", O_RDONLY);
+	fd = open("gnlTester/files/alternate_line_nl_no_nl", O_RDONLY);
 	while (1)
 	{
 		line = get_next_line(fd);
 		if (line == NULL)
 			break ;
 		count++;
-		printf("[%d]:%s\n", count, line);
+		printf("%s", line);
 		free (line);
 	}
 	close(fd);
 	 return(0);
 }
-*/
 
+/*
 int    main(void)
 {
     int    fd;
@@ -156,7 +155,7 @@ int    main(void)
     char *str;
 
     i = 0;
-    fd = open("example.txt", O_RDONLY);
+    fd = open("gnlTester/files/alternate_line_nl_no_nl", O_RDONLY);
 		while (i < 4)
     {
         str =  get_next_line(fd);
@@ -166,3 +165,4 @@ int    main(void)
     }
     close (fd);
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: saaboudo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:14:43 by saaboudo          #+#    #+#             */
-/*   Updated: 2023/12/17 15:22:29 by saaboudo         ###   ########.fr       */
+/*   Updated: 2023/12/20 18:51:40 by saaboudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -41,7 +41,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	if (!s1 || !s2)
 		return (NULL);
-	result = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	result = ft_calloc(sizeof(char), (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!result)
 	{
 		return (NULL);
